@@ -130,6 +130,7 @@ excel/
   failure_times_for_laplace.xlsx       # Clean failure times used for Laplace test
   laplace_test_wdc.xlsx                # Laplace test calculation (WDC example)
   optimal_preventive_cost_wdc.xlsm     # Cost minimisation (Simpson + GRG solver)
+```
 
 ---
 
