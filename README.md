@@ -14,6 +14,7 @@ This repository consolidates computational engineering tools, numerical optimiza
 │   ├── eurocode-steel-structures/         # EN 1991 & EN 1993 structural steel design helpers (Python)
 │   ├── hdd-reliability-ai-datacenter/     # Weibull MLE reliability & TCO maintenance policy (MATLAB, Python, Excel)
 │   ├── hertzian-contact-ehl-lubrication/  # Tribology, EHL film thickness & flash temperature solver (Python)
+│   ├── kirchhoff-plate-ritz-solver/       # Rayleigh-Ritz thin trapezoidal plate bending & stress solver (MATLAB)
 │   └── welded-beam-design-optimization/   # Constrained NLP Augmented Lagrangian solver (MATLAB)
 ├── ml-engineering-projects/               # [In Progress] PyTorch surrogate models & PINNs for mechanics
 └── README.md
@@ -26,11 +27,11 @@ This repository consolidates computational engineering tools, numerical optimiza
 A collection of engineering calculation tools, numerical solvers, and quantitative studies developed during my M.Sc. in Mechanical Engineering at FEUP:
 
 | Project | Domain | Core Methods & Models | Tech Stack |
-| :--- | :--- | :--- | :--- |
 | **[Welded Beam Design Optimization](./Master's%20degree%20projects/welded-beam-design-optimization/README.md)** | Numerical Optimization & Machine Design | Constrained NLP from scratch using Augmented Lagrangian, Steepest Descent, Conjugate Gradient (Fletcher-Reeves & Polak-Ribière), and Armijo line search | `MATLAB` (Symbolic Math) |
 | **[HDD Reliability & Maintenance Policy](./Master's%20degree%20projects/hdd-reliability-ai-datacenter/README.md)** | Industrial Maintenance & Reliability Engineering | Laplace trend test, 2-parameter Weibull MLE fitting ($\beta, \eta$), and 3-year Total Cost of Ownership (TCO) optimization for 2,000 datacenter drives | `Python` (`SciPy`), `MATLAB`, `Excel` |
 | **[Eurocode Steel Structures](./Master's%20degree%20projects/eurocode-steel-structures/README.md)** | Structural Engineering & Code Compliance | Automated wind/snow environmental actions (`EN 1991`), cross-section classification, flexural/LTB buckling, and $N+M$ interaction checks (`EN 1993-1-1`) | `Python` (Standard Library & TI-Nspire) |
 | **[Hertzian Contact & EHL Lubrication](./Master's%20degree%20projects/hertzian-contact-ehl-lubrication/README.md)** | Tribology & Contact Mechanics | Line/elliptical Hertzian contact stress, ISO VG rheology, Dowson–Higginson & Hamrock–Dowson EHL film thickness ($\Lambda$), and Blok flash temperature ($\Delta T_{\max}$) | `Python` (Standard Library) |
+| **[Kirchhoff–Love Plate Bending Solver](./Master's%20degree%20projects/kirchhoff-plate-ritz-solver/README.md)** | Solid Mechanics & Numerical Methods | Rayleigh–Ritz solver for SSSS/CCCC trapezoidal plates, isoparametric domain mapping, and plane-stress von Mises yield analysis | `MATLAB` (Symbolic Math) |
 
 ---
 
