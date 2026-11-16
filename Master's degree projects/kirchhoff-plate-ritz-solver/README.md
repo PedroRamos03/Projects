@@ -3,6 +3,8 @@
 ## Overview
 This project implements an analytical-numerical **Rayleigh–Ritz** solver in **MATLAB** to compute the transverse deflection and plane-stress distributions of thin trapezoidal plates under Kirchhoff–Love classical plate theory. Developed for graduate coursework in **Plates and Shells** (*Placas e Cascas*) at the Faculty of Engineering of the University of Porto (FEUP), the solver formulates admissible tensor-product basis functions, verifies boundary conditions symbolically, maps irregular trapezoidal domains via isoparametric shape functions, and evaluates von Mises yield criteria.
 
+
+In addition to the original symbolic implementation, the repository includes an **optimized solver (`trapezoidal_plate_ritz_solver_optimized.m`)** revised later using numerical computing and solver-architecture insights gained throughout my Master's degree and thesis work.rRplacing symbolic grid loops and symbolic double integrals with compiled vectorized function handles (`matlabFunction`) and adaptive numeric quadrature (`integral2`), reducing runtime by **~7×** (~98 s $\rightarrow$ ~14 s) and enabling high-resolution mesh refinement at negligible additional cost.
 ---
 
 ## Mechanical & Mathematical Formulation
@@ -39,7 +41,8 @@ $$\sigma_{vm} = \sqrt{\sigma_{x_1x_1}^2 - \sigma_{x_1x_1}\sigma_{x_2x_2} + \sigm
 
 ```text
 kirchhoff-plate-ritz-solver/
-├── trapezoidal_plate_ritz_solver.m   # Main symbolic-numeric Rayleigh-Ritz solver and 3D post-processor
+├── trapezoidal_plate_ritz_solver.m             # Original symbolic-numeric Rayleigh-Ritz solver
+├── trapezoidal_plate_ritz_solver_optimized.m   # Revised solver with numeric quadrature (integral2) & vectorized grid evaluation
 └── README.md
 ```
 
@@ -56,8 +59,8 @@ kirchhoff-plate-ritz-solver/
    ```matlab
    cd('Master''s degree projects/kirchhoff-plate-ritz-solver')
    ```
-2. Configure geometry (`a, b, c, h`), `boundarycase` (`1` = SSSS, `2` = CCCC), `loadcase` (`1`–`4`), and basis order `po` at the top of `trapezoidal_plate_ritz_solver.m`, then run:
+2. Configure geometry (`a, b, c, h`), `boundarycase` (`1` = SSSS, `2` = CCCC), `loadcase` (`1`–`4`), and basis order `po` at the top of the script, then run the optimized solver (or the original baseline script):
    ```matlab
-   trapezoidal_plate_ritz_solver
+   trapezoidal_plate_ritz_solver_optimized
    ```
 3. The script outputs stiffness/load matrices, maximum deflection $w_{\max}$, maximum von Mises stress $\sigma_{vm,\max}$ vs. yield strength $\sigma_y$, and 3D surface plots for $w$, $\sigma_{x_1x_1}$, $\sigma_{x_2x_2}$, and $\tau_{x_1x_2}$.
