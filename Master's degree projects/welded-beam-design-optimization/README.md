@@ -64,9 +64,6 @@ The solver reduces total manufacturing cost by **54.8%** from the initial feasib
 
 ```text
 welded-beam-design-optimization/
-├── problem-statement/
-│   ├── Problem_page1.jpg           # Problem description, geometry diagram & objective/constraints
-│   └── Problem_page2.jpg           # Stress/deflection equations, constants & benchmark optimum
 ├── main_steepest_descent.m         # Main script: Augmented Lagrangian + Steepest Descent
 ├── main_conjugate_gradient.m       # Main script: Augmented Lagrangian + Conjugate Gradient (FR & PR)
 ├── augmented_lagrangian.m          # Augmented Lagrangian objective evaluation
